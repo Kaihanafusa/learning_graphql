@@ -1,0 +1,16 @@
+version: "3"
+
+volumes:
+  db-data:
+
+services:
+  db:
+    image: postgres:16
+    container_name: postgres_graphql
+    volumes:
+      - db-data:/var/lib/postgresql/postgres_graphql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
