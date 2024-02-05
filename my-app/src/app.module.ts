@@ -11,11 +11,11 @@ import { join } from 'path';
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      playground: false,
+      playground: true,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
     }),
   ],
-    controllers: [AppController],
-    providers: [AppService, PrismaService, PostsResolver],
+  controllers: [AppController],
+  providers: [AppService, PrismaService, PostsResolver],
 })
 export class AppModule {}
